@@ -72,7 +72,7 @@ class config extends Controller
         if ($this->request->isPost()) {
             $this->applyCsrfToken('updateSVN');
             exec('/Users/mac/Documents/workspace/Essence/updateSVN/run.sh');
-            $this->success('更新成功！');
+            $this->success('更新成功！');         
         }else{
             $this->success('更新失败！');
         }
