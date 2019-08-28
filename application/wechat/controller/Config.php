@@ -71,7 +71,7 @@ class config extends Controller
     {
         if ($this->request->isPost()) {
             $this->applyCsrfToken('updateSVN');
-            exec('/Users/mac/Documents/workspace/Essence/updateSVN/run.sh');
+            exec('/Users/mac/Documents/workspace/Essence/updateSVN/run.sh>>/Users/mac/Documents/workspace/logfile 2>&1');
             $this->success('更新成功！');         
         }else{
             $this->success('更新失败！');
@@ -83,7 +83,7 @@ class config extends Controller
     {
         if ($this->request->isPost()) {
             $this->applyCsrfToken('save');
-            exec('/Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP/platforms/ios/run.sh');
+            exec('/Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP/platforms/ios/run.sh>>/Users/mac/Documents/workspace/logfile 2>&1');
             $this->success('打包成功！');
         }
     }
