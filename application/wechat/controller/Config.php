@@ -83,7 +83,7 @@ class config extends Controller
     {
         if ($this->request->isPost()) {
             $this->applyCsrfToken('save');
-            exec('/Users/sundebiao/500out/game/web/WEB_APP/platforms/ios/run.sh');
+            exec('/Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP/platforms/ios/run.sh');
             $this->success('打包成功！');
         }
     }
