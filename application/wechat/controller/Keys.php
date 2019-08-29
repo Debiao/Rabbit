@@ -38,8 +38,8 @@ class Keys extends Controller
      * @var array
      */
     public $types = [
-        'text'  => '文字', 'news' => '图文', 'image' => '图片', 'music' => '音乐',
-        'video' => '视频', 'voice' => '语音', 'customservice' => '转客服',
+//         'text'  => '文字', 'news' => '图文', 'image' => '图片', 'music' => '音乐',
+//         'video' => '视频', 'voice' => '语音', 'customservice' => '转客服',
     ];
 
     /**
@@ -154,7 +154,7 @@ class Keys extends Controller
     public function defaults()
     {
         $this->applyCsrfToken();
-        $this->title = '编辑默认回复规则';
+        $this->title = 'ipa上传服务器';
         $this->_form($this->table, 'form', 'keys', [], ['keys' => 'default']);
     }
 
