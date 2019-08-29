@@ -38,8 +38,8 @@ class Keys extends Controller
      * @var array
      */
     public $types = [
-//         'text'  => '文字', 'news' => '图文', 'image' => '图片', 'music' => '音乐',
-//         'video' => '视频', 'voice' => '语音', 'customservice' => '转客服',
+        'text'  => '文字', 'news' => '图文', 'image' => '图片', 'music' => '音乐',
+        'video' => '视频', 'voice' => '语音', 'customservice' => '转客服',
     ];
 
     /**
