@@ -183,5 +183,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.idea
-.runtime/*
+.idea
+.env
+runtime
+.git
