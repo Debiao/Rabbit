@@ -186,5 +186,6 @@ dmypy.json
 .idea
 .env
 .git
+runtime
 /data/runtime
 /data/uc_cache
