@@ -120,6 +120,7 @@ class config extends Controller
                 if ($s_name == 0){
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
+                       exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
                       $this->success('打包成功dev！');
                       }else{
@@ -129,6 +130,7 @@ class config extends Controller
                 }else{
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
+                       exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
                       $this->success('打包成功dis！');
                       }else{
