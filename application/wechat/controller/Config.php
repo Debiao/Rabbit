@@ -64,13 +64,16 @@ class config extends Controller
         $this->totalBlack = Db::name('WechatFans')->where(['is_black' => '1'])->count();
         $this->totalNews = Db::name('WechatNews')->where(['is_deleted' => '0'])->count();
         $this->totalRule = Db::name('WechatKeys')->count();
+
         $this->fetch();
     }
 
     public function updateSVN()
     {
+
         if ($this->request->isPost()) {
             $this->applyCsrfToken('updateSVN');
+            exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
             exec('/Users/mac/Documents/workspace/Essence/svn_sh/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
             $this->success('更新成功！');         
         }else{
