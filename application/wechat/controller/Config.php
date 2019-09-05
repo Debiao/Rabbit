@@ -84,11 +84,63 @@ class config extends Controller
 
     public function save()
     {
-        if ($this->request->isPost()) {
-            $this->applyCsrfToken('save');
-            exec('/Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP/platforms/ios/run.sh>>/Users/mac/Documents/workspace/log/logfile 2>&1');
-            $this->success('打包成功！');
+
+        $p_name  = $this->request->post("p_name");
+        $s_name  = $this->request->post("s_name");
+        switch ($p_name) {
+            case 0:
+                if ($s_name == 0){
+
+                }else{
+
+                }
+                break;
+            case 1:
+                if ($s_name == 0){
+
+                }else{
+
+                }
+                break;
+            case 2:
+                if ($s_name == 0){
+
+                }else{
+
+                }
+                break;
+            case 3:
+                if ($s_name == 0){
+
+                }else{
+
+                }
+                break;
+            case 4:
+                if ($s_name == 0){
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+                      $this->success('打包成功0！');
+                      }else{
+                      $this->success('打包失败0！');
+                     }
+
+                }else{
+                      if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/workspace/log/logfile 2>&1');
+                      $this->success('打包成功1！');
+                      }else{
+                      $this->success('打包失败1！');
+                     }
+                }
+                break;
+
+            default:
+               break;
         }
+
     }
 
 }
