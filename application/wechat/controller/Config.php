@@ -120,19 +120,19 @@ class config extends Controller
                 if ($s_name == 0){
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
-                      $this->success('打包成功0！');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+                      $this->success('打包成功dev！');
                       }else{
-                      $this->success('打包失败0！');
+                      $this->success('打包失败dev！');
                      }
 
                 }else{
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/workspace/log/logfile 2>&1');
-                      $this->success('打包成功1！');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+                      $this->success('打包成功dis！');
                       }else{
-                      $this->success('打包失败1！');
+                      $this->success('打包失败dis！');
                      }
                 }
                 break;
