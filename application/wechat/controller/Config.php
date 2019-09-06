@@ -73,9 +73,10 @@ class config extends Controller
 
         if ($this->request->isPost()) {
             $this->applyCsrfToken('updateSVN');
-            exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
+            exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/svn/run.sh');
             exec('/Users/mac/Documents/workspace/Essence/svn_sh/run.sh>>/Users/mac/Documents/temporary/log/svn/error.log 2>&1');
-            $this->success('更新成功！');         
+            exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/svnupdate/run.sh');
+            $this->success('更新成功！');
         }else{
             $this->success('更新失败！');
         }
@@ -120,8 +121,9 @@ class config extends Controller
                 if ($s_name == 0){
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                       exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
@@ -130,8 +132,9 @@ class config extends Controller
                 }else{
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                       exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
