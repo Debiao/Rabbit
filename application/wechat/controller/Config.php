@@ -74,7 +74,7 @@ class config extends Controller
         if ($this->request->isPost()) {
             $this->applyCsrfToken('updateSVN');
             exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
-            exec('/Users/mac/Documents/workspace/Essence/svn_sh/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+            exec('/Users/mac/Documents/workspace/Essence/svn_sh/run.sh>>/Users/mac/Documents/temporary/log/svn/error.log 2>&1');
             $this->success('更新成功！');         
         }else{
             $this->success('更新失败！');
@@ -121,7 +121,7 @@ class config extends Controller
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
                        exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
-                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
@@ -131,7 +131,7 @@ class config extends Controller
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
                        exec('/Users/mac/Documents/workspace/Essence/svn_sh/logrun.sh');
-                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
