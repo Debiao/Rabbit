@@ -90,7 +90,7 @@ class config extends Controller
         $s_name  = $this->request->post("s_name");
         switch ($p_name) {
             case 0:
-                if ($s_name == 0){
+               if ($s_name == 0){
 
                 }else{
 
@@ -104,10 +104,26 @@ class config extends Controller
                 }
                 break;
             case 2:
-                if ($s_name == 0){
-
+                  if ($s_name == 0){
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500cai/dev/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      $this->success('打包成功dev！');
+                      }else{
+                      $this->success('打包失败dev！');
+                     }
                 }else{
-
+                     if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500cai/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
                 }
                 break;
             case 3:
