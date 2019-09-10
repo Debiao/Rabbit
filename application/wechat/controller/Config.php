@@ -123,7 +123,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
-                      exec('Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
