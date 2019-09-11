@@ -91,9 +91,15 @@ class config extends Controller
         switch ($p_name) {
             case 0:
                if ($s_name == 0){
-
+                   if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      $this->success('暂未开放');
+                      }
                 }else{
-
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      $this->success('暂未开放');
+                      }
                 }
                 break;
             case 1:
@@ -128,9 +134,15 @@ class config extends Controller
                 break;
             case 3:
                 if ($s_name == 0){
-
+                      if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      $this->success('暂未开放');
+                      }
                 }else{
-
+                        if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      $this->success('暂未开放');
+                      }
                 }
                 break;
             case 4:
