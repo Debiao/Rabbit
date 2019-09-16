@@ -199,20 +199,24 @@ class Keys extends Controller
     public function server()
     {
         $type = $this->request->post('server_pwd');
-        $keys = $this->request->post('server_ip');
-        $content = $this->request->post('server_path');
-        $image_url = $this->request->post('image_url');
+        $content = $this->request->post('server_ip');
+        $image_url = $this->request->post('server_path');
+        $voice_url = $this->request->post('image_url');
+        $music_title = $this->request->post('server_name');
+
 
         $data = [
-           'appid' => '0000',
            'type'   => $type,
-           'keys'      => $keys,
-           'content'  => $content,
-           'image_url'   => $image_url,
+           'content'      => $content,
+           'image_url'  => $image_url,
+           'voice_url'   => $voice_url,
+           'music_title' => $music_title,
        ];
 
        if (!empty($data)) Db::name('wechat_keys')->insert($data);
-          $this->success('插入成功');
+
+        exec('/Users/mac/Documents/workspace/Essence/mysql/run.sh');
+        $this->success('success!!!');
 
     }
 

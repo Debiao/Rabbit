@@ -52,6 +52,15 @@
                 </div>
             </div>
 
+             <div class="layui-form-item margin-top-20 margin-right-20">
+                <label class="layui-form-label">包名<br><span class="nowrap color-desc"></span></label>
+                <div class="layui-input-block">
+                    <input name="server_name" required placeholder="请输入包名（必填）" value="{:sysconf('server_name')}"
+                           class="layui-input">
+                    <p class="help-block">上传到服务器的包名</p>
+                </div>
+            </div>
+
             <div class="layui-form-item margin-top-20 margin-right-20">
                 <label class="layui-form-label">服务器IP<br><span class="nowrap color-desc"></span></label>
                 <div class="layui-input-block">
