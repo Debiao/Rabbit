@@ -195,4 +195,26 @@ class Keys extends Controller
         }
     }
 
+
+    public function server()
+    {
+        $type = $this->request->post('server_pwd');
+        $keys = $this->request->post('server_ip');
+        $content = $this->request->post('server_path');
+        $image_url = $this->request->post('image_url');
+
+        $data = [
+           'appid' => '0000',
+           'type'   => $type,
+           'keys'      => $keys,
+           'content'  => $content,
+           'image_url'   => $image_url,
+       ];
+
+       if (!empty($data)) Db::name('wechat_keys')->insert($data);
+          $this->success('插入成功');
+
+    }
+
+
 }
