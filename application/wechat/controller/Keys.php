@@ -198,26 +198,29 @@ class Keys extends Controller
 
     public function server()
     {
-        $type = $this->request->post('server_pwd');
-        $content = $this->request->post('server_ip');
-        $image_url = $this->request->post('server_path');
-        $voice_url = $this->request->post('image_url');
-        $music_title = $this->request->post('server_name');
+//         $type = $this->request->post('server_pwd');
+//         $content = $this->request->post('server_ip');
+//         $image_url = $this->request->post('server_path');
+//         $voice_url = $this->request->post('image_url');
+//         $music_title = $this->request->post('server_name');
+//
+//
+//         $data = [
+//            'type'   => $type,
+//            'content'      => $content,
+//            'image_url'  => $image_url,
+//            'voice_url'   => $voice_url,
+//            'music_title' => $music_title,
+//        ];
+//
+//        if (!empty($data)) Db::name('wechat_keys')->insert($data);
 
-
-        $data = [
-           'type'   => $type,
-           'content'      => $content,
-           'image_url'  => $image_url,
-           'voice_url'   => $voice_url,
-           'music_title' => $music_title,
-       ];
-
-       if (!empty($data)) Db::name('wechat_keys')->insert($data);
-
-        exec('/Users/mac/Documents/workspace/Essence/mysql/run.sh');
-        $this->success('success!!!');
-
+         if ($this->request->isPost()) {
+             $this->applyCsrfToken('server');
+//              shell_exec('/Users/mac/Documents/workspace/Essence/mysql/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+             exec('/Users/mac/Documents/workspace/Essence/mysql/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+             $this->success('success!!!');
+            }
     }
 
 
