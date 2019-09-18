@@ -47,7 +47,7 @@ class Fans extends Controller
      */
     public function index()
     {
-        $this->title = '4444444444444';
+        $this->title = 'IPA记录筛选';
         $this->where = ['appid' => WechatService::getAppid()];
         $query = $this->_query($this->table)->like('nickname')->equal('subscribe,is_black');
         $query->dateBetween('subscribe_at')->where($this->where)->order('subscribe_time desc')->page();
