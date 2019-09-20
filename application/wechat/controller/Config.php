@@ -152,12 +152,18 @@ class config extends Controller
                 if ($s_name == 0){
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                      $this->success('暂未开放');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outtlgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      $this->success('打包成功dev');
                       }
                 }else{
-                        if ($this->request->isPost()) {
+                      if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                      $this->success('暂未开放');
+                      exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/500out/500outtlgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      $this->success('打包成功dev');
                       }
                 }
                 break;
