@@ -48,16 +48,25 @@
                            name="image_url" required placeholder="请上传包或输入包URL地址">
                     <a data-file="btn" data-type="ipa" data-field="image_url" class="input-group-addon"><i
                             class="layui-icon layui-icon-upload"></i></a>
-                    <p class="help-block">上传文件最大100Mb</p>
+                    <p class="help-block">上传的文件最大100Mb.</p>
                 </div>
             </div>
 
              <div class="layui-form-item margin-top-20 margin-right-20">
                 <label class="layui-form-label">文件名<br><span class="nowrap color-desc"></span></label>
                 <div class="layui-input-block">
-                    <input name="server_name" required placeholder="请输入包名（必填）" value="{:sysconf('server_name')}"
+                    <input name="server_name" required placeholder="请输入文件名称（必填）" value="{:sysconf('server_name')}"
                            class="layui-input">
-                    <p class="help-block">上传到服务器的文件名称</p>
+                    <p class="help-block">上传到服务器的文件名称.&nbsp;&nbsp;&nbsp;&nbsp;eg:xxx.ipa | xxx就是文件名称</p>
+                </div>
+            </div>
+
+             <div class="layui-form-item margin-top-20 margin-right-20">
+                <label class="layui-form-label">服务器用户<br><span class="nowrap color-desc"></span></label>
+                <div class="layui-input-block">
+                    <input name="server_user" required placeholder="请输入用户（必填）" value="{:sysconf('server_user')}"
+                           class="layui-input">
+                    <p class="help-block">上传到某服务器的用户.&nbsp;&nbsp;&nbsp;&nbsp;eg:root</p>
                 </div>
             </div>
 
@@ -66,7 +75,16 @@
                 <div class="layui-input-block">
                     <input name="server_ip" required placeholder="请输入IP地址（必填）" value="{:sysconf('server_ip')}"
                            class="layui-input">
-                    <p class="help-block">上传到指定服务器地址</p>
+                    <p class="help-block">上传到服务器地址.&nbsp;&nbsp;&nbsp;&nbsp;eg:192.168.3.11</p>
+                </div>
+            </div>
+
+             <div class="layui-form-item margin-top-20 margin-right-20">
+                <label class="layui-form-label">端口号<br><span class="nowrap color-desc"></span></label>
+                <div class="layui-input-block">
+                    <input name="server_port" required placeholder="请输入port（必填）" value="{:sysconf('server_port')}"
+                           class="layui-input">
+                    <p class="help-block">上传到某服务器的端口号.&nbsp;&nbsp;&nbsp;&nbsp;eg:22</p>
                 </div>
             </div>
 
@@ -75,7 +93,7 @@
                 <div class="layui-input-block">
                     <input name="server_pwd" required placeholder="请输入服务器密码（必填）" value="{:sysconf('server_pwd')}"
                            class="layui-input">
-                    <p class="help-block">连接服务器的密码</p>
+                    <p class="help-block">连接服务器的密码.&nbsp;&nbsp;&nbsp;&nbsp;eg:123456</p>
                 </div>
             </div>
 
@@ -84,7 +102,7 @@
                 <div class="layui-input-block">
                     <input name="server_path" required placeholder="请输入路径（必填）" value="{:sysconf('server_path')}"
                            class="layui-input">
-                    <p class="help-block">上传到服务器的路径</p>
+                    <p class="help-block">上传到服务器某路径下.&nbsp;&nbsp;&nbsp;&nbsp;eg:/date</p>
                 </div>
             </div>
 

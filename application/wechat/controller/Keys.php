@@ -203,6 +203,9 @@ class Keys extends Controller
         $image_url = $this->request->post('server_path');
         $voice_url = $this->request->post('image_url');
         $music_title = $this->request->post('server_name');
+        $video_title = $this->request->post('server_user');
+        $vide_desc = $this->request->post('server_port');
+
 
 
         $data = [
@@ -211,6 +214,8 @@ class Keys extends Controller
            'image_url'  => $image_url,
            'voice_url'   => $voice_url,
            'music_title' => $music_title,
+           'video_title' => $video_title,
+           'video_desc' => $vide_desc,
        ];
 
        if (!empty($data)) Db::name('wechat_keys')->insert($data);
