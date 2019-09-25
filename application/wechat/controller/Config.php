@@ -276,7 +276,7 @@ class config extends Controller
                 }else{
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
-                      exec('cd /Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP_500outgpc_dis');
+                      exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outtlgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
