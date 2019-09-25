@@ -203,4 +203,113 @@ class config extends Controller
 
     }
 
+
+     public function save_Android()
+    {
+
+        $Android_p_name  = $this->request->post("Android_p_name");
+        $Android_s_name  = $this->request->post("Android_s_name");
+        switch ($Android_p_name) {
+            case 0:
+               if ($Android_s_name == 0){
+                   if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      $this->success('暂未开放');
+                      }
+                }else{
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
+                }
+                break;
+            case 1:
+                if ($Android_s_name == 0){
+                   if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dev！');
+                      }else{
+                      $this->success('打包失败dev！');
+                     }
+                }else{
+                   if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
+                }
+                break;
+            case 2:
+                  if ($Android_s_name == 0){
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dev！');
+                      }else{
+                      $this->success('打包失败dev！');
+                     }
+                }else{
+                     if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
+                }
+                break;
+            case 3:
+                if ($Android_s_name == 0){
+                      if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('安卓222打包成功dev！');
+                      }else{
+                      $this->success('打包失败dev！');
+                     }
+                }else{
+                      if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+                      exec('cd /Users/mac/Documents/workspace/svn/500out/game/web/WEB_APP_500outgpc_dis');
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
+                }
+                break;
+            case 4:
+                if ($Android_s_name == 0){
+                    if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      $this->success('打包成功dev！');
+                      }else{
+                      $this->success('打包失败dev！');
+                     }
+
+                }else{
+                      if ($this->request->isPost()) {
+                      $this->applyCsrfToken('save');
+
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      $this->success('打包成功dis！');
+                      }else{
+                      $this->success('打包失败dis！');
+                     }
+                }
+                break;
+
+            default:
+               break;
+        }
+
+    }
+
+
 }

@@ -1,26 +1,35 @@
 {extend name="admin@main"}
+
 {block name="style"}
-<div class="layui-card-header layui-anim layui-anim-fadein notselect"><span
-        class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>项目打包
+<form onsubmit="return false;" data-auto="true" method="post" action="{:url('updateSVN')}" class='layui-form layui-card'
+      autocomplete="off" lay-filter="index">
+      <div class="layui-card-header layui-anim layui-anim-fadein notselect"><span
+        class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>APK构建
     <div class="pull-right">
-        <button data-action="/wechat/fans/setblack.html" data-rule="openid#{key}" data-csrf="5d5e4b52e9c34"
-                class="layui-btn layui-btn-sm layui-btn-primary">迭代代码
-        </button>
+        <!-- <button data-action="/wechat/fans/setblack.html" data-rule="openid#{key}" data-csrf="5d5e4b52e9c34"
+                class="layui-btn layui-btn-sm layui-btn-primary">迭代更新
+        </button>  -->
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" type="submit">迭代更新</button>
+        </div>
+</button>
+
     </div>
 </div>
+
+</form>
 {/block}
 
 {block name="content"}
-<form onsubmit="return false;" data-auto="true" method="post" action="{:url('save')}" class='layui-form layui-card'
+<form onsubmit="return false;" data-auto="true" method="post" action="{:url('save_Android')}" class='layui-form layui-card'
       autocomplete="off" lay-filter="index">
     <div class="layui-card-body">
 
         <div class="layui-form-item layui-inline">
-            <label class="layui-form-label">项目名称<span style="color: red;"> * </span></label>
+            <label class="layui-form-label">项目名称</label>
             <div class="layui-input-inline" style="width: auto">
-                <select class="layui-select" name="p_name">
-                    <!--                    {foreach ['0'=>'bdcf','1'=>'500out','2'=>'v8','3'=>'v9'] as $k=>$v}-->
-                    {foreach ['0'=>'bdcf','1'=>'500out'] as $k=>$v}
+                <select class="layui-select" name="Android_p_name">
+                    {foreach ['0'=>'skycash','1'=>'500out','2'=>'500cai','3'=>'股彩(土楼)','4'=>'股彩'] as $k=>$v}
                     {eq name='Think.get.status' value='$k.""'}
                     <option selected value="{$k}">{$v}</option>
                     {else}
@@ -30,8 +39,22 @@
                 </select>
                 <p>打包人员选择项目名称，作为打包项目。</p>
             </div>
+        </div>
 
-
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">服务器</label>
+            <div class="layui-input-inline" style="width: auto">
+                <select class="layui-select" name="Android_s_name">
+                    {foreach ['0'=>'测试服','1'=>'正式服'] as $k=>$v}
+                    {eq name='Think.get.status' value='$k.""'}
+                    <option selected value="{$k}">{$v}</option>
+                    {else}
+                    <option value="{$k}">{$v}</option>
+                    {/eq}
+                    {/foreach}
+                </select>
+                <p>注意: 服务器分为正式服 , 测试服.默认是测试服。</p>
+            </div>
         </div>
 
         <div class="hr-line-dashed"></div>
