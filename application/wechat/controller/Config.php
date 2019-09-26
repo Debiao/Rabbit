@@ -303,7 +303,7 @@ class config extends Controller
                       if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
-                      exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
+                      exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
                       exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
                       $this->success('打包成功dis！');
                       }else{
