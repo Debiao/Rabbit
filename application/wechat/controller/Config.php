@@ -219,7 +219,7 @@ class config extends Controller
                 }else{
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
- $this->success('暂未开放');
+                      $this->success('暂未开放');
 //                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
@@ -232,7 +232,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500out/dev/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
@@ -242,7 +242,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500out/dis/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
@@ -274,7 +274,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outtlgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
@@ -284,7 +284,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outtlgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
@@ -297,7 +297,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outgpc/dev/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dev！');
                       }else{
                       $this->success('打包失败dev！');
@@ -308,7 +308,7 @@ class config extends Controller
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/Android/run.sh');
                       exec('/Users/mac/Documents/workspace/Essence/baleandroid_sh/500out/500outgpc/dis/run.sh>>/Users/mac/Documents/temporary/log/Android/error.log 2>&1');
-                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
+                      exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/android/run.sh');
                       $this->success('打包成功dis！');
                       }else{
                       $this->success('打包失败dis！');
