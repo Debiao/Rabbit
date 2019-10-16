@@ -143,7 +143,7 @@ class Keys extends Controller
     public function subscribe()
     {
         $this->applyCsrfToken();
-        $this->title = '6666666666666666666666';
+        $this->title = 'IAP或APK分析';
         $this->_form($this->table, 'form', 'keys', [], ['keys' => 'subscribe']);
     }
 

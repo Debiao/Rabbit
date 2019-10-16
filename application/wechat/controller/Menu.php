@@ -60,7 +60,7 @@ class Menu extends Controller
             $keys = Db::name('WechatKeys')->where($where)->order('sort desc,id desc')->select();
             $this->success('获取数据成功!', ['menudata' => sysdata('menudata'), 'keysdata' => $keys]);
         } else {
-            $this->title = '888888888888888';
+            $this->title = 'IPA或APK包分析';
             $this->menuTypes = $this->menuType;
             $this->fetch();
         }

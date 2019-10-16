@@ -1,7 +1,30 @@
 {extend name="admin@main"}
 
 {block name='content'}
-<div id="MenuEditor" class="layui-hide think-box-shadow" style="width:910px">
+<style>
+    html,body { padding: 0;margin: 0; font-size: 12px; background: #efefef; }
+    p { padding: 0; margin: 0; }
+    .container { width: 450px; margin: 20px auto; }
+    .title { border-left: 4px solid #78C3F3; padding-left: 12px; font-size: 16px; margin: 0 0 20px 0; }
+    .card { padding: 20px; margin-bottom: 20px; background: #fff; border-radius: 4px; font-size: 12px; transition: all .3s; border: 1px solid #d9d9d9; border-color: #e9e9e9; }
+    .card:hover { box-shadow: 0 1px 6px hsla(0,0%,39%,.2); border-color: #eee; }
+    .file { position: relative; border: 1px solid #99D3F5; border-radius: 2px; width: 85px; height: 30px; line-height: 30px; text-align: center; color: #1E88C7; }
+    .file:hover { background: #AADFFD; border-color: #78C3F3; color: #004974; text-decoration: none; }
+    #file-input { position: absolute; top: 0; left: 0; width: 85px; height: 30px; opacity: 0; }
+    #file-input:hover { cursor: pointer; }
+  </style>
+<div class="container">
+    <div class="card">
+      <p class="title">Operation Panel</p>
+      <a href="https://zt.gzxstech.com/appinfo.html" target="_blank" >包分析</a>
+      <!-- <div class="file">Select File
+        <input type="file" name="file" id="file-input" onchange="fileSelect()">
+      </div>
+    </div> -->
+    <div id="result-list">
+    </div>
+  </div>
+<!-- <div id="MenuEditor" class="layui-hide think-box-shadow" style="width:910px">
    <div class='mobile-preview inline-block'>
        <div class='mobile-header'>公众号</div>
        <div class='mobile-body'></div>
@@ -27,9 +50,9 @@
                <a ng-click="addItem(list)"><i class="icon-add"></i></a>
            </li>
        </ul>
-   </div>
+   </div> -->
 
-   <div class="absolute inline-block layui-card margin-left-10" style="border:1px solid #ccc;height:578px;width:570px">
+   <!-- <div class="absolute inline-block layui-card margin-left-10" style="border:1px solid #ccc;height:578px;width:570px">
        <div class="layui-card-header layui-bg-gray text-center">菜单编辑</div>
        <div class="layui-card-body" ng-if="list.length<1">
            <blockquote class="layui-elem-quote border-0 text-center">请在左侧创建菜单...</blockquote>
@@ -40,7 +63,7 @@
                    <label class="layui-form-label">菜单名称</label>
                    <div class="layui-input-block">
                        <input required name="menu-name" ng-model="item.name" class="layui-input" placeholder="请输入菜单名称">
-                       <span class="help-block">字数不超过13个汉字或40个字母</span>
+                       <span class="help-block">字数不超过13个汉字或40个字母1213123123</span>
                    </div>
                </div>
                <div class="layui-form-item margin-top-20" ng-if="!item.sub_button||item.sub_button.length<1">
@@ -93,110 +116,111 @@
                </div>
            </form>
        </div>
-   </div>
+   </div> -->
 
-   <div class="text-center margin-top-20">
+   <!-- <div class="text-center margin-top-20">
        &lt;!&ndash;{if auth("wechat/menu/edit")}&ndash;&gt;
        <button class="layui-btn menu-submit" ng-click="submit()">保存发布</button>
        &lt;!&ndash;{/if}&ndash;&gt;
        &lt;!&ndash;{if auth("wechat/menu/cancel")}&ndash;&gt;
        <button data-load='{:url("wechat/menu/cancel")}' class="layui-btn layui-btn-danger">取消发布</button>
        &lt;!&ndash;{/if}&ndash;&gt;
-   </div>
+   </div> -->
 </div>
 
 <script>
-   require(['angular'], function () {
+//    require(['angular'], function () {
 
-       var $form = $('.menu-form').vali();
-       var $vali = $form.vali().data('validate');
-       $('#MenuEditor.layui-hide').removeClass('layui-hide');
+//        var $form = $('.menu-form').vali();
+//        var $vali = $form.vali().data('validate');
+//        $('#MenuEditor.layui-hide').removeClass('layui-hide');
 
-       var app = angular.module("MenuEditor", []).run(callback);
-       angular.bootstrap(document.getElementById(app.name), [app.name]);
+//        var app = angular.module("MenuEditor", []).run(callback);
+//        angular.bootstrap(document.getElementById(app.name), [app.name]);
 
-       function callback($rootScope) {
-           $rootScope.item = {};
-           $rootScope.list = [];
-           $rootScope.keys = [];
-           $.form.load('{:url("index")}', {output: 'json'}, 'get', function (ret) {
-               return $rootScope.$apply(function () {
-                   $rootScope.keys = ret.data.keysdata || [];
-                   $rootScope.list = ret.data.menudata || [];
-                   if ($rootScope.list.length < 1) $rootScope.list = [{name: '请输入名称', type: 'click', sub_button: []}];
-                   for (var i in $rootScope.list) $rootScope.list[i].sub_button = $rootScope.list[i].sub_button || [];
-                   $rootScope.list[0].show = true;
-                   $rootScope.list[0].active = true;
-                   $rootScope.item = $rootScope.list[0];
-               }), false;
-           });
+//        function callback($rootScope) {
+//            $rootScope.item = {};
+//            $rootScope.list = [];
+//            $rootScope.keys = [];
+//            $.form.load('{:url("index")}', {output: 'json'}, 'get', function (ret) {
+//                return $rootScope.$apply(function () {
+//                    $rootScope.keys = ret.data.keysdata || [];
+//                    $rootScope.list = ret.data.menudata || [];
+//                    if ($rootScope.list.length < 1) $rootScope.list = [{name: '请输入名称', type: 'click', sub_button: []}];
+//                    for (var i in $rootScope.list) $rootScope.list[i].sub_button = $rootScope.list[i].sub_button || [];
+//                    $rootScope.list[0].show = true;
+//                    $rootScope.list[0].active = true;
+//                    $rootScope.item = $rootScope.list[0];
+//                }), false;
+//            });
 
-           // 动态计算宽度
-           $rootScope.getItemStyle = function (list) {
-               return 'width:' + (100 / (list.length >= 3 ? 3 : (list.length + 1))) + '%';
-           };
+//            // 动态计算宽度
+//            $rootScope.getItemStyle = function (list) {
+//                return 'width:' + (100 / (list.length >= 3 ? 3 : (list.length + 1))) + '%';
+//            };
 
-           // 增加菜单选项
-           $rootScope.addItem = function (list) {
-               $vali.checkAllInput();
-               if ($form.find('.validate-error').size() > 0) {
-                   return $.msg.tips('表单验证不成功，请输入需要的内容！');
-               }
-               list.push({name: '请输入名称', type: 'click', sub_button: []});
-           };
+//            // 增加菜单选项
+//            $rootScope.addItem = function (list) {
+//                $vali.checkAllInput();
+//                if ($form.find('.validate-error').size() > 0) {
+//                    return $.msg.tips('表单验证不成功，请输入需要的内容！');
+//                }
+//                list.push({name: '请输入名称', type: 'click', sub_button: []});
+//            };
 
-           // 移除菜单
-           $rootScope.delItem = function (one, two) {
-               var tmp = [], _two = null;
-               if (two) {
-                   for (var i in one.sub_button) if (one.sub_button[i] !== two) {
-                       tmp.push(one.sub_button[i]);
-                       if (one.sub_button[i].active) _two = one.sub_button[i];
-                   }
-                   one.sub_button = tmp;
-                   return $rootScope.setActiveItem(one, _two);
-               }
-               for (var i in $rootScope.list) if (one !== $rootScope.list[i]) tmp.push($rootScope.list[i]);
-               $rootScope.list = tmp;
-               if ($rootScope.list.length > 1) $rootScope.setActiveItem($rootScope.list[0])
-           };
+//            // 移除菜单
+//            $rootScope.delItem = function (one, two) {
+//                var tmp = [], _two = null;
+//                if (two) {
+//                    for (var i in one.sub_button) if (one.sub_button[i] !== two) {
+//                        tmp.push(one.sub_button[i]);
+//                        if (one.sub_button[i].active) _two = one.sub_button[i];
+//                    }
+//                    one.sub_button = tmp;
+//                    return $rootScope.setActiveItem(one, _two);
+//                }
+//                for (var i in $rootScope.list) if (one !== $rootScope.list[i]) tmp.push($rootScope.list[i]);
+//                $rootScope.list = tmp;
+//                if ($rootScope.list.length > 1) $rootScope.setActiveItem($rootScope.list[0])
+//            };
 
-           // 切换选择菜单
-           $rootScope.setActiveItem = function (one, two) {
-               for (var i in $rootScope.list) {
-                   $rootScope.list[i].show = ($rootScope.list[i] === one);
-                   $rootScope.list[i].active = two ? false : ($rootScope.list[i] === one);
-               }
-               for (var i in $rootScope.list) for (var j in $rootScope.list[i].sub_button) {
-                   $rootScope.list[i].sub_button[j].active = ($rootScope.list[i].sub_button[j] === two)
-               }
-               $rootScope.item = two || one || {};
-               $rootScope.item.type = $rootScope.item.type || 'click';
-               if ($rootScope.item.type === 'click') setTimeout(function () {
-                   form.render('select');
-                   $rootScope.item.key = $('[lay-filter="key"]').val();
-               }, 50);
-           };
+//            // 切换选择菜单
+//            $rootScope.setActiveItem = function (one, two) {
+//                for (var i in $rootScope.list) {
+//                    $rootScope.list[i].show = ($rootScope.list[i] === one);
+//                    $rootScope.list[i].active = two ? false : ($rootScope.list[i] === one);
+//                }
+//                for (var i in $rootScope.list) for (var j in $rootScope.list[i].sub_button) {
+//                    $rootScope.list[i].sub_button[j].active = ($rootScope.list[i].sub_button[j] === two)
+//                }
+//                $rootScope.item = two || one || {};
+//                $rootScope.item.type = $rootScope.item.type || 'click';
+//                if ($rootScope.item.type === 'click') setTimeout(function () {
+//                    form.render('select');
+//                    $rootScope.item.key = $('[lay-filter="key"]').val();
+//                }, 50);
+//            };
 
-           // 下拉列表处理
-           $rootScope.$watch('item', function () {
-               if ($rootScope.item.type === 'click') setTimeout(function () {
-                   form.render('select');
-               }, 50)
-           }, true);
+//            // 下拉列表处理
+//            $rootScope.$watch('item', function () {
+//                if ($rootScope.item.type === 'click') setTimeout(function () {
+//                    form.render('select');
+//                }, 50)
+//            }, true);
 
-           form.on('select(key)', function (data) {
-               $rootScope.item.key = data.value;
-           });
+//            form.on('select(key)', function (data) {
+//                $rootScope.item.key = data.value;
+//            });
 
-           // 提交数据
-           $rootScope.submit = function () {
-               $vali.checkAllInput();
-               if ($form.find('.validate-error').size() > 0) return false;
-               $.form.load('{:url("edit")}', {data: angular.toJson($rootScope.list)}, 'post');
-           }
-       }
-   })
+//            // 提交数据
+//            $rootScope.submit = function () {
+//                $vali.checkAllInput();
+//                if ($form.find('.validate-error').size() > 0) return false;
+//                $.form.load('{:url("edit")}', {data: angular.toJson($rootScope.list)}, 'post');
+//            }
+//        }
+//    })
+
 </script>
 
 {/block}
