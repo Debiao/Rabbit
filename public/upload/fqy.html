@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 300px;
+            height: 100px;
+            margin: 0 auto;
+            font-size: 50px;
+        }
+        
+        button {
+            color: red;
+        }
+    </style>
+</head>
+
+<body style="text-align: center">
+    <div id="div"></div>
+    <button onclick="f()">明天私人定制营养餐请选择</button>
+    <script>
+        function f() {
+            var a = ["小鸡", "鱼排", "排骨", "中鸽", "在抽一次"];
+            var i = Math.floor(Math.random() * a.length);
+            document.getElementById('div').innerText = a[i];
+        }
+    </script>
+</body>
+
+</html>
