@@ -82,6 +82,21 @@ class config extends Controller
         }
     }
 
+  public function updateskycashSVN()
+    {
+
+        if ($this->request->isPost()) {
+            $this->applyCsrfToken('updateskycashSVN');
+            exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/svn/run.sh');
+            exec('/Users/mac/Documents/packspace/execute/svn.sh>>/Users/mac/Documents/temporary/log/svn/error.log 2>&1');
+            exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/svnupdate/run.sh');
+            $this->success('SkyCash更新成功！');
+        }else{
+            $this->success('SkyCash更新失败！');
+        }
+    }
+
+
 
     public function save()
     {
@@ -99,7 +114,8 @@ class config extends Controller
                     if ($this->request->isPost()) {
                       $this->applyCsrfToken('save');
                       exec('/Users/mac/Documents/workspace/Essence/backupLog_sh/xcode/run.sh');
-                      exec('/Users/mac/Documents/workspace/Essence/baleios_sh/bdcfapp/skycash/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+//                       exec('/Users/mac/Documents/workspace/Essence/baleios_sh/bdcfapp/skycash/dis/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
+                      exec('/Users/mac/Documents/packspace/execute/run.sh>>/Users/mac/Documents/temporary/log/xcode/error.log 2>&1');
                       exec('/Users/mac/Documents/workspace/Essence/sendemail_sh/balesuccess/run.sh');
                       $this->success('打包成功dis！');
                       }else{
